@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{17745FC8-5667-4FC1-858E-0B0762A00A9B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>UMS.Framework.Web</RootNamespace>
+    <AssemblyName>UMS.Framework.Web</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Mvc, Version=4.0.0.1, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AuthorizeIgnoreAttribute.cs" />
+    <Compile Include="SupportFilterAttribute.cs" />
+    <Compile Include="WebControllerBase.cs" />
+    <Compile Include="CookieContext.cs" />
+    <Compile Include="IAuthCookie.cs" />
+    <Compile Include="MultiButtonAttribute.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ServiceContext.cs" />
+    <Compile Include="UserContext.cs" />
+    <Compile Include="VerifyCodeHelper.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\UMS.Cache\UMS.Cache.csproj">
+      <Project>{32c10191-8759-4c20-a7d0-b71c01875b50}</Project>
+      <Name>UMS.Cache</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UMS.Component.Data\UMS.Component.Data.csproj">
+      <Project>{8758df04-1a83-496b-9f63-2187e5ebdef4}</Project>
+      <Name>UMS.Component.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UMS.Core\UMS.Core.csproj">
+      <Project>{4baca8a0-11e7-4b27-8c34-a04e16f9260d}</Project>
+      <Name>UMS.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UMS.Models\UMS.Models.csproj">
+      <Project>{2218d29b-9668-441b-84b8-cdaedad78501}</Project>
+      <Name>UMS.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UMS.Utility\UMS.Utility.csproj">
+      <Project>{0a25a563-ef83-4834-8f09-ee559061ee2c}</Project>
+      <Name>UMS.Utility</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

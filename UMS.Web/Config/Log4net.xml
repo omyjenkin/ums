@@ -1,0 +1,132 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<log4net>
+
+  <logger name="ServiceExceptionLog">
+    <level value="DEBUG" />
+    <appender-ref ref="AdoNetAppender" />
+  </logger>
+  <logger name="SystemLog">
+    <level value="DEBUG" />
+    <appender-ref ref="AdoNetAppender" />
+   <appender-ref ref="DebugAppender" />
+  </logger>
+  <logger name="ReflectLayout">
+    <level value="DEBUG" />
+    <appender-ref ref="AdoNetAppender" />
+  </logger>
+
+  <appender name="DebugAppender" type="log4net.Appender.DebugAppender">
+    <immediateFlush value="true" />
+    <layout type="log4net.Layout.SimpleLayout" />
+  </appender>
+  
+  <appender name="debug-file" type="log4net.Appender.RollingFileAppender" maxSizeRollBackups="5">
+    <!-- Sends log messages to a file in App_Data. -->
+    <file value="Logs/debug/debug" />
+    <appendToFile value="true" />
+    <!-- Immediate flush on error log, to avoid data loss with sudden termination. -->
+    <immediateFlush value="true" />
+    <staticLogFileName value="false" />
+    <rollingStyle value="Date" />
+    <datepattern value="-yyyy.MM.dd'.log'" />
+    <!-- Prevents   from displaying locking debug messages. -->
+    <lockingModel type="log4net.Appender.FileAppender+MinimalLock" />
+
+    <layout type="log4net.Layout.PatternLayout">
+      <conversionPattern value="[%date{yyyy-MM-dd HH:mm:ss}] #%thread %logger - %message%newline" />
+    </layout>
+
+  </appender>
+
+  <appender name="error-file" type="log4net.Appender.RollingFileAppender" maxSizeRollBackups="5">
+
+    <!-- Sends ERROR and FATAL log messages to a file in App_Data. -->
+
+    <file value="Logs/error/error" />
+    <appendToFile value="true" />
+
+    <!-- Immediate flush on error log, to avoid data loss with sudden termination. -->
+
+    <immediateFlush value="true" />
+    <staticLogFileName value="false" />
+    <rollingStyle value="Date" />
+    <datepattern value="-yyyy.MM.dd'.log'" />
+
+    <lockingModel type="log4net.Appender.FileAppender+MinimalLock" />
+    <filter type="log4net.Filter.LevelRangeFilter">
+
+      <!-- Only ERROR and FATAL log messages end up in this target, even if child loggers accept lower priority. -->
+
+      <levelMin value="ERROR" />
+    </filter>
+    <layout type="log4net.Layout.PatternLayout">
+      <conversionPattern value="[%date{yyyy-MM-dd HH:mm:ss}] #%thread %logger - %message%newline" />
+    </layout>
+  </appender>
+
+  <appender name="AdoNetAppender" type="log4net.Appender.AdoNetAppender">
+    <bufferSize value="1" />
+    <!--<connectionType value="System.Data.SqlClient.SqlConnection, System.Data, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+    <connectionString value="{ConnectionString}" />-->
+    <connectionType value="System.Data.SqlClient.SqlConnection,
+              System.Data, 
+              Version=4.0.0.0, 
+              Culture=neutral, 
+              PublicKeyToken=b77a5c561934e089" />
+  <!-- This will retrieve a connection string by name from the app.config -->
+  <connectionStringName value="DefaultConnection" />
+    <commandText value="INSERT INTO [SysLog] ([Id],[Category],[ErrorUrl],[Message],[Exception],[Method],[Params],[CreateTime]) VALUES (newid(),@Category,@ErrorUrl,@Message,@Exception,@Method,@Params,@CreateTime)" />
+    <parameter>
+      <parameterName value="@Category" />
+      <dbType value="String" />
+      <layout type="UMS.Log.ClassLayout,UMS.Log">
+        <conversionPattern value="%property{Category}%newline" />
+      </layout>
+    </parameter>
+    <parameter>
+      <parameterName value="@ErrorUrl" />
+      <dbType value="String" />
+      <layout type="UMS.Log.ClassLayout,UMS.Log">
+        <conversionPattern value="%property{ErrorUrl}%newline" />
+      </layout>
+    </parameter>
+    <parameter>
+      <parameterName value="@Message" />
+      <dbType value="String" />
+      <layout type="UMS.Log.ClassLayout,UMS.Log">
+        <conversionPattern value="%property{Message}%newline" />
+      </layout>
+    </parameter>
+    <parameter>
+      <parameterName value="@Exception" />
+      <dbType value="String" />
+      <layout type="UMS.Log.ClassLayout,UMS.Log">
+        <conversionPattern value="%property{Exception}%newline" />
+      </layout>
+    </parameter>
+    <parameter>
+      <parameterName value="@Method" />
+      <dbType value="String" />
+      <layout type="UMS.Log.ClassLayout,UMS.Log">
+        <conversionPattern value="%property{Method}%newline" />
+      </layout>
+    </parameter>
+    <parameter>
+      <parameterName value="@Params" />
+      <dbType value="String" />
+      <layout type="UMS.Log.ClassLayout,UMS.Log">
+        <conversionPattern value="%property{Params}%newline" />
+      </layout>
+    </parameter>
+    <parameter>
+      <parameterName value="@CreateTime" />
+      <dbType value="DateTime" />
+      <layout type="UMS.Log.ClassLayout,UMS.Log">
+        <conversionPattern value="%property{CreateTime}%newline" />
+      </layout>
+    </parameter>
+    
+  </appender>
+
+</log4net>
+

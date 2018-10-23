@@ -1,0 +1,61 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>无标题文档</title>
+    <link href="../Content/login.css" rel="stylesheet" type="text/css">
+    @Scripts.Render("~/bundles/jquery")
+
+    <script src="@Url.Content("~/Content/Js/Account/Login.js")" type="text/javascript"></script>
+
+</head>
+
+<body>
+    <div id="web">
+        <p style="height:180px;"></p>
+        <div align="center"><h2>系统登录</h2></div>
+        <p style="height:40px;"></p>
+        <div class="login">
+            <div class="banner">
+
+            </div>
+            <div class="logmain">
+                <h1>&nbsp;</h1>
+                <div class="logdv">
+                    <span class="logtxt">账 号：</span>
+                    <input name="textarea" type="text" id="userName" class="ipt">
+                </div>
+                <div class="logdv">
+                    <span class="logtxt">密 码：</span>
+                    <input name="textarea" type="password" id="password" class="ipt">
+                </div>
+                <div class="logdv">
+                    <span class="logtxt">验证码：</span>
+                    <input style="width: 50px" type="text" name="validateCode" id="validateCode" />
+                    <img id="codeImg" alt="刷新验证码！" style="margin-bottom: -8px; cursor: pointer;" src="/Common/VerifyCode.ashx" onclick="this.src=this.src+'?'" />
+                    <a href="javascript:$('#codeImg').trigger('click')">看不清？</a>
+                </div>
+                <div class="logdv">
+                    <p class="logtxt">&nbsp;</p>
+                    <a href="#" class="more">忘记密码</a> <a href="#" class="more">注册</a>
+                    <input name="" type="checkbox" value="" class="cex">记住密码
+                </div>
+
+                <div class="logdv" style="height:40px;">
+                    <p class="logtxt">&nbsp;</p>
+                    <input name="提交" type="submit" class="btnbg" value="点击登录" id="btnLogin">
+                </div>
+
+            </div>
+        </div>
+        <p style="height:100px;"></p>
+    </div>
+
+
+</body>
+</html>

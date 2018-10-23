@@ -1,0 +1,80 @@
+﻿@using UMS.Models 
+
+@{
+    ViewBag.Title = "设置用户包含的角色";
+    Layout = "~/Views/Shared/_Index_LayoutEdit.cshtml";
+
+    List<PermModel> perm = (List<PermModel>)ViewBag.Perm;
+    if (perm == null)
+    {
+        perm = new List<PermModel>();
+    }
+}
+
+<div class="mvctool bgb">
+    @Html.ToolButton("btnSave", "icon-save", "保存", perm, "Create", true)
+</div>
+<div class="pd3">
+    <table id="RoleList"></table>
+</div> 
+
+@Scripts.Render("~/Content/Js/Common.js") 
+<script type="text/javascript">
+    $(function () { 
+        $('#RoleList').datagrid({
+            url: '/User/GetRoleListByUser?userId=@(ViewBag.UserId)',
+            width: SetGridWidthSub(6),
+            method: 'post',
+            height: SetGridHeightSub(41),
+            fitColumns: true,
+            sortName: 'Id',
+            sortOrder: 'desc',
+            idField: 'Id',
+            pageSize: 10,
+            pageList: [10, 20, 30, 40, 50],
+            pagination: true,
+            striped: true, //奇偶行是否区分
+            singleSelect: true,//单选模式
+            columns: [[
+                { field: 'Id', title: 'ID', width: 80, hidden: true },
+                { field: 'Name', title: '角色名称', width: 120, align: 'center' },
+                { field: 'Description', title: '说明', width: 80, align: 'center' },
+                { field: 'Flag', title: '是否分配', width: 80, align: 'center', editor: { type: 'checkbox', options: { on: true, off: false } } }
+            ]],
+            onLoadSuccess: function () {
+                var rows = $("#RoleList").datagrid("getRows");
+                for (var i = 0; i < rows.length; i++) {
+                    //获取每一行的数据
+                    $('#RoleList').datagrid('beginEdit', i);
+                }
+            }
+        });
+    
+        $("#btnSave").click(function () {
+
+            var rows = $("#RoleList").datagrid("getRows");
+            var data = new Array();
+            for (var i = 0; i < rows.length; i++) {
+                var setFlag = $("td[field='Flag'] input").eq(i).prop("checked");
+                if (setFlag)//判断是否有作修改
+                {
+                    data.push(rows[i].Id);
+                }
+            }
+            var roleIds = data.join();
+            //提交数据库
+            $.post("/User/UpdateUserRoleByUserId", { userId: '@(ViewBag.UserId)', roleIds: roleIds },
+             function (data) {
+                 if (data.type == 1) {
+                     window.parent.frameReturnByMes(data.message);
+                     window.parent.frameReturnByReload(true);
+                     window.parent.frameReturnByClose()
+                 }
+                 else {
+                     window.parent.frameReturnByMes(data.message);
+                 }
+             }, "json");
+        });
+
+    });
+</script>

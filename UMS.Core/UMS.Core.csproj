@@ -1,0 +1,158 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4BACA8A0-11E7-4B27-8C34-A04E16F9260D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>UMS.Core</RootNamespace>
+    <AssemblyName>UMS.Core</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Generated\IAService.generated.cs" />
+    <Compile Include="Generated\Impl\AService.generated.cs" />
+    <Compile Include="Generated\Impl\SysLoginInfoService.generated.cs" />
+    <Compile Include="Generated\Impl\SysLogService.generated.cs" />
+    <Compile Include="Generated\Impl\SysModuleOperateService.generated.cs" />
+    <Compile Include="Generated\Impl\SysModuleService.generated.cs" />
+    <Compile Include="Generated\Impl\SysRightOperateService.generated.cs" />
+    <Compile Include="Generated\Impl\SysRightService.generated.cs" />
+    <Compile Include="Generated\Impl\SysRoleService.generated.cs" />
+    <Compile Include="Generated\Impl\SysUserRoleService.generated.cs" />
+    <Compile Include="Generated\Impl\SysUserService.generated.cs" />
+    <Compile Include="Generated\ISysLoginInfoService.generated.cs" />
+    <Compile Include="Generated\ISysLogService.generated.cs" />
+    <Compile Include="Generated\ISysModuleOperateService.generated.cs" />
+    <Compile Include="Generated\ISysModuleService.generated.cs" />
+    <Compile Include="Generated\ISysRightOperateService.generated.cs" />
+    <Compile Include="Generated\ISysRightService.generated.cs" />
+    <Compile Include="Generated\ISysRoleService.generated.cs" />
+    <Compile Include="Generated\ISysUserRoleService.generated.cs" />
+    <Compile Include="Generated\ISysUserService.generated.cs" />
+    <Compile Include="GridPager.cs" />
+    <Compile Include="Impl\BaseService.cs" />
+    <Compile Include="Impl\SysRightService.cs" />
+    <Compile Include="ISysLoginInfoService.cs" />
+    <Compile Include="ISysModuleService.cs" />
+    <Compile Include="ISysModuleOperateService.cs" />
+    <Compile Include="ISysRightService.cs" />
+    <Compile Include="ISysRoleService.cs" />
+    <Compile Include="ISysUserService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Suggestion.cs" />
+    <Compile Include="Impl\SysModuleService.cs" />
+    <Compile Include="Impl\SysModuleOperateService.cs" />
+    <Compile Include="Impl\SysRoleService.cs" />
+    <Compile Include="Impl\SysUserService.cs" />
+    <Compile Include="T4\BLLScript.cs">
+      <DependentUpon>BLLScript.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="T4\IBLLScript.cs">
+      <DependentUpon>IBLLScript.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="T4\BLLScript.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>BLLScript.cs</LastGenOutput>
+      <LastOutputs>
+..\Generated\Impl\AService.generated.cs
+..\Generated\Impl\SysLoginInfoService.generated.cs
+..\Generated\Impl\SysLogService.generated.cs
+..\Generated\Impl\SysModuleOperateService.generated.cs
+..\Generated\Impl\SysModuleService.generated.cs
+..\Generated\Impl\SysRightOperateService.generated.cs
+..\Generated\Impl\SysRightService.generated.cs
+..\Generated\Impl\SysRoleService.generated.cs
+..\Generated\Impl\SysUserRoleService.generated.cs
+..\Generated\Impl\SysUserService.generated.cs
+.\BLLScript.cs
+</LastOutputs>
+    </Content>
+    <Content Include="T4\IBLLScript.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>IBLLScript.cs</LastGenOutput>
+      <LastOutputs>
+..\Generated\IAService.generated.cs
+..\Generated\ISysLoginInfoService.generated.cs
+..\Generated\ISysLogService.generated.cs
+..\Generated\ISysModuleOperateService.generated.cs
+..\Generated\ISysModuleService.generated.cs
+..\Generated\ISysRightOperateService.generated.cs
+..\Generated\ISysRightService.generated.cs
+..\Generated\ISysRoleService.generated.cs
+..\Generated\ISysUserRoleService.generated.cs
+..\Generated\ISysUserService.generated.cs
+.\IBLLScript.cs
+</LastOutputs>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="T4\Include\IBLLTemplate.ttinclude" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\UMS.Component.Data\UMS.Component.Data.csproj">
+      <Project>{8758df04-1a83-496b-9f63-2187e5ebdef4}</Project>
+      <Name>UMS.Component.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UMS.Core.Data\UMS.Core.Data.csproj">
+      <Project>{7643825b-136d-4082-bb76-bace685391d7}</Project>
+      <Name>UMS.Core.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UMS.Models\UMS.Models.csproj">
+      <Project>{2218d29b-9668-441b-84b8-cdaedad78501}</Project>
+      <Name>UMS.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UMS.Utility\UMS.Utility.csproj">
+      <Project>{0a25a563-ef83-4834-8f09-ee559061ee2c}</Project>
+      <Name>UMS.Utility</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

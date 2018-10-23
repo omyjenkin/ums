@@ -1,0 +1,68 @@
+﻿@using UMS.Models;
+@model SysRole
+@{
+    ViewBag.Title = "创建";
+    Layout = "~/Views/Shared/_Index_LayoutEdit.cshtml";
+    List<PermModel> perm = (List<PermModel>)ViewBag.Perm;
+    if (perm == null)
+    {
+        perm = new List<PermModel>();
+    }
+}
+
+<script type="text/javascript">
+    $(function () {
+        $("#btnSave").click(function() {
+            console.log('abc');
+                $.ajax({
+                    url: "/Role/Edit",
+                    type: "Post",
+                    data: $("#CreateForm").serialize(),
+                    dataType: "json",
+                    success: function (data) {
+                        if (data.ResultType == 0) {
+                            window.parent.frameReturnByMes(data.Message);
+                            window.parent.frameReturnByReload(true);
+                            window.parent.frameReturnByClose()
+                        }
+                        else {
+                            window.parent.frameReturnByMes(data.Message);
+                        }
+                    }
+                });
+        });
+        $("#btnReturn").click(function () {
+            window.parent.frameReturnByClose();
+        });
+    });
+</script>
+
+
+<div style="height:100%;width:100%;">
+    <div class="dialog-toolbar mvctoolbar">
+        @Html.ToolButton("btnSave", "icon-save", "保存", perm, "Save", true)
+        @Html.ToolButton("btnReturn", "icon-return", "返回", false)
+    </div>
+@using (Html.BeginForm("Create", "Role", null, FormMethod.Post, new { Id = "CreateForm" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+    <div class="container panel-body">
+        <div class="form-group">
+            @Html.LabelFor(model => model.Id)：
+            @Html.EditorFor(model => model.Id, new { @class = "form-control" }, true)
+            <span class="help-inline">@Html.ValidationMessageFor(model => model.Id)</span>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Name)：
+            @Html.EditorFor(model => model.Name, new { @class = "form-control" }, true)
+            @Html.ValidationMessageFor(model => model.Name)
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Description)：
+            @Html.EditorFor(model => model.Description, new { @class = "form-control" }, true)
+            @Html.ValidationMessageFor(model => model.Description)
+        </div>
+    </div>
+}
+</div>

@@ -1,0 +1,79 @@
+﻿@model UMS.Models.SysLog
+@{
+    ViewBag.Title = "异常处理页面";
+    Layout = "~/Views/Shared/_Index_Layout.cshtml";
+}
+
+<h2>系统错误</h2>
+<div style="text-align:center;">
+    <table width="100%" class="blueTab" border="0" cellspacing="1" cellpadding="1">
+        <tr>
+            <td colspan="3">
+                <table cellspacing="0" cellpadding="0" width="100%" border="0">
+                    <tbody>
+                        <tr>
+                            <td>
+                                &nbsp;错误处理页面
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+        <tr id="youhaotishi">
+            <td colspan="2" align="left">
+                &nbsp;欢迎您光临本网站！网站运行发生错误，请与管理员联系。错误原因可能如下:
+                <br />
+                &nbsp;&nbsp;&nbsp;1.非法访问页面.
+                <br />
+                &nbsp;&nbsp;&nbsp;2.您输入的数据错误.
+                <br />
+                &nbsp;&nbsp;&nbsp;3.您访问的页面不存在.
+                <br />
+                &nbsp;&nbsp;&nbsp;4.内容不存在,或已被删除.
+                <br />
+                &nbsp;&nbsp;&nbsp;5.系统忙,请稍候再试.
+            </td>
+        </tr>
+        <tbody id="detailInformation" style="display: none;">
+            <tr>
+                <td width="20%" class="alignRight" nowrap>
+                    <strong>出错页面：</strong>
+                </td>
+                <td class="alignLeft">
+                    @Html.DisplayFor(model => model.ErrorUrl)
+                </td>
+            </tr> 
+            <tr>
+                <td class="alignRight" nowrap>
+                    <strong>异常信息：</strong>
+                </td>
+                <td class="alignLeft">
+                    @Html.DisplayFor(model => model.Message)
+                </td>
+            </tr> 
+            <tr  >
+                <td class="alignRight" nowrap>
+                    <strong>方法名称：</strong>
+                </td>
+                <td class="alignLeft" style="background-color: #ffffcc;">
+                    &nbsp;@Html.DisplayFor(model => model.Method)
+                </td>
+            </tr> 
+            <tr  >
+                <td class="alignRight" nowrap>
+                    <strong>行号：</strong>
+                </td>
+                <td class="alignLeft" style="background-color: #ffffcc; color: Red">
+                    &nbsp;@Html.DisplayFor(model => model.Line)
+                </td>
+            </tr>
+            
+        </tbody>
+    </table> 
+</div>
+
+<script type="text/javascript">
+
+     
+</script>

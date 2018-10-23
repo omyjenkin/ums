@@ -1,0 +1,41 @@
+﻿@using UMS.Models;
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Index_Layout.cshtml";
+
+    List<PermModel> perm = (List<PermModel>)ViewBag.Perm;
+    if (perm == null)
+    {
+        perm = new List<PermModel>();
+    }
+}
+ 
+<script src="@Url.Content("~/Content/Js/Module/Module.js")" type="text/javascript"></script>
+
+<table>
+    <tr>
+        <td style="vertical-align:top">
+            <div class="mvctool">
+                @Html.ToolButton("btnCreate", "icon-add", "新增", perm, "Create", true)
+                @Html.ToolButton("btnEdit", "icon-edit", "编辑", perm, "Edit", true)
+                @Html.ToolButton("btnDelete", "icon-remove", "删除", perm, "Delete", true)
+            </div>
+
+            <table id="List"></table>
+
+        </td>
+        <td style="width: 210px; padding-left: 5px; vertical-align:top">
+            <div class="mvctool">
+                @Html.ToolButton("btnCreateOpt", "icon-add", "新增操作码", perm, "Create", true)
+                @Html.ToolButton("btnDeleteOpt", "icon-remove", "删除操作码", perm, "Delete", true)
+            </div>
+
+
+            <table id="OptList"></table>
+
+        </td>
+    </tr>
+</table>
+
+<div id="modalwindow" class="easyui-window" data-options="modal:true,closed:true,minimizable:false,shadow:false"></div>

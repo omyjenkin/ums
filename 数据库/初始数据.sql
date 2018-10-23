@@ -1,0 +1,46 @@
+INSERT INTO [SysModule] ([Id],[Name],[EnglishName],[ParentId],[Url],[Iconic],[Sort],[Remark],Enable,[CreateUser],[CreateTime],[IsLast],[Version]) values ('0','顶级菜单','Root','0','','pic_82',0,'',1,'Administrator','10  1 2012 12:00AM',0,NULL)
+INSERT INTO [SysModule] ([Id],[Name],[EnglishName],[ParentId],[Url],[Iconic],[Sort],[Remark],Enable,[CreateUser],[CreateTime],[IsLast],[Version]) values ('BaseSample','模板样例','Sample by Ajax','SampleFile','SysSample','pic_224',0,'',1,'Administrator',NULL,1,NULL)
+INSERT INTO [SysModule] ([Id],[Name],[EnglishName],[ParentId],[Url],[Iconic],[Sort],[Remark],Enable,[CreateUser],[CreateTime],[IsLast],[Version]) values ('Document','我的桌面','Start','PersonDocument','Home/Doc','pic_224',0,'',1,'Administrator','10  1 2012 12:00AM',1,NULL)
+INSERT INTO [SysModule] ([Id],[Name],[EnglishName],[ParentId],[Url],[Iconic],[Sort],[Remark],Enable,[CreateUser],[CreateTime],[IsLast],[Version]) values ('Info','我的资料','Info','PersonDocument','Home/Info','pic_224',0,'',1,'Administrator','10  1 2012 12:00AM',1,NULL)
+INSERT INTO [SysModule] ([Id],[Name],[EnglishName],[ParentId],[Url],[Iconic],[Sort],[Remark],Enable,[CreateUser],[CreateTime],[IsLast],[Version]) values ('Home','主页','Home','Information','MIS/Article','pic_224',1,'',1,'Administrator','10  1 2012 12:00AM',1,NULL)
+INSERT INTO [SysModule] ([Id],[Name],[EnglishName],[ParentId],[Url],[Iconic],[Sort],[Remark],Enable,[CreateUser],[CreateTime],[IsLast],[Version]) values ('Information','信息中心','Information','OA','','pic_224',0,'',1,'Administrator','10  1 2012 12:00AM',0,NULL)
+INSERT INTO [SysModule] ([Id],[Name],[EnglishName],[ParentId],[Url],[Iconic],[Sort],[Remark],Enable,[CreateUser],[CreateTime],[IsLast],[Version]) values ('ManageInfo','管理中心','Manage Article','Information','MIS/ManageArticle','pic_224',4,'',1,'Administrator','10  1 2012 12:00AM',1,NULL)
+INSERT INTO [SysModule] ([Id],[Name],[EnglishName],[ParentId],[Url],[Iconic],[Sort],[Remark],Enable,[CreateUser],[CreateTime],[IsLast],[Version]) values ('ModuleSetting','模块维护','Module Setting','RightManage','Module','pic_224',100,'',1,'Administrator','10  1 2012 12:00AM',1,NULL)
+INSERT INTO [SysModule] ([Id],[Name],[EnglishName],[ParentId],[Url],[Iconic],[Sort],[Remark],Enable,[CreateUser],[CreateTime],[IsLast],[Version]) values ('MyInfo','我的信息','My Article','Information','MIS/MyArticle','pic_224',2,'',1,'Administrator','10  1 2012 12:00AM',1,NULL)
+INSERT INTO [SysModule] ([Id],[Name],[EnglishName],[ParentId],[Url],[Iconic],[Sort],[Remark],Enable,[CreateUser],[CreateTime],[IsLast],[Version]) values ('PersonDocument','个人中心','Person Center','0','','pic_224',2,'',1,'Administrator','10  1 2012 12:00AM',0,NULL)
+INSERT INTO [SysModule] ([Id],[Name],[EnglishName],[ParentId],[Url],[Iconic],[Sort],[Remark],Enable,[CreateUser],[CreateTime],[IsLast],[Version]) values ('RightManage','权限管理','Authorities Management','0','','pic_224',4,'',1,'Administrator','10  1 2012 12:00AM',0,NULL)
+INSERT INTO [SysModule] ([Id],[Name],[EnglishName],[ParentId],[Url],[Iconic],[Sort],[Remark],Enable,[CreateUser],[CreateTime],[IsLast],[Version]) values ('RoleAuthorize','角色权限设置','Role Authorize','RightManage','Right','pic_224',6,'',1,'Administrator','10  1 2012 12:00AM',1,NULL)
+INSERT INTO [SysModule] ([Id],[Name],[EnglishName],[ParentId],[Url],[Iconic],[Sort],[Remark],Enable,[CreateUser],[CreateTime],[IsLast],[Version]) values ('RoleManage','角色管理','Role Manage','RightManage','Role','pic_224',2,'',1,'Administrator','10  1 2012 12:00AM',1,NULL)
+INSERT INTO [SysModule] ([Id],[Name],[EnglishName],[ParentId],[Url],[Iconic],[Sort],[Remark],Enable,[CreateUser],[CreateTime],[IsLast],[Version]) values ('SampleFile','开发指南样例','SampleFile','0','SysSample','pic_224',1,'',1,'Administrator',NULL,0,NULL)
+INSERT INTO [SysModule] ([Id],[Name],[EnglishName],[ParentId],[Url],[Iconic],[Sort],[Remark],Enable,[CreateUser],[CreateTime],[IsLast],[Version]) values ('SystemConfig','系统配置','System Config','SystemManage','SysConfig','pic_224',0,'',1,'Administrator','10  1 2012 12:00AM',1,NULL)
+INSERT INTO [SysModule] ([Id],[Name],[EnglishName],[ParentId],[Url],[Iconic],[Sort],[Remark],Enable,[CreateUser],[CreateTime],[IsLast],[Version]) values ('SystemExcepiton','系统异常','System Exception','SystemManage','SysException','pic_224',2,'',1,'Administrator','10  1 2012 12:00AM',1,NULL)
+INSERT INTO [SysModule] ([Id],[Name],[EnglishName],[ParentId],[Url],[Iconic],[Sort],[Remark],Enable,[CreateUser],[CreateTime],[IsLast],[Version]) values ('SystemJobs','系统任务','System Jobs','TaskScheduling','','pic_224',0,'',1,'Administrator','10  1 2012 12:00AM',1,NULL)
+INSERT INTO [SysModule] ([Id],[Name],[EnglishName],[ParentId],[Url],[Iconic],[Sort],[Remark],Enable,[CreateUser],[CreateTime],[IsLast],[Version]) values ('SystemLog','系统日志','System Log','SystemManage','Log','pic_224',1,'',1,'Administrator','10  1 2012 12:00AM',1,NULL)
+INSERT INTO [SysModule] ([Id],[Name],[EnglishName],[ParentId],[Url],[Iconic],[Sort],[Remark],Enable,[CreateUser],[CreateTime],[IsLast],[Version]) values ('SystemManage','系统管理','System Management','0','','pic_224',3,'',1,'Administrator','10  1 2012 12:00AM',0,NULL)
+INSERT INTO [SysModule] ([Id],[Name],[EnglishName],[ParentId],[Url],[Iconic],[Sort],[Remark],Enable,[CreateUser],[CreateTime],[IsLast],[Version]) values ('UserManage','用户管理','User Manage','RightManage','User','pic_422',1,NULL,1,'Administrator','10  1 2012 12:00AM',1,NULL)
+
+INSERT INTO [SysModuleOperate] ([Id],[Name],[KeyCode],[ModuleId],[IsValid],[Sort]) values ('ModuleSettingCreate','创建','Create','BaseSample',0,0)
+INSERT INTO [SysModuleOperate] ([Id],[Name],[KeyCode],[ModuleId],[IsValid],[Sort]) values ('ModuleSettingDelete','删除','Delete','BaseSample',0,0)
+INSERT INTO [SysModuleOperate] ([Id],[Name],[KeyCode],[ModuleId],[IsValid],[Sort]) values ('ModuleSettingDetails','详细','Details','BaseSample',0,0)
+INSERT INTO [SysModuleOperate] ([Id],[Name],[KeyCode],[ModuleId],[IsValid],[Sort]) values ('ModuleSettingEdit','编辑','Edit','BaseSample',0,0)
+INSERT INTO [SysModuleOperate] ([Id],[Name],[KeyCode],[ModuleId],[IsValid],[Sort]) values ('ModuleSettingQuery','查询','Query','BaseSample',0,0)
+INSERT INTO [SysModuleOperate] ([Id],[Name],[KeyCode],[ModuleId],[IsValid],[Sort]) values ('ModuleSettingSave','保存','Save','BaseSample',0,0)
+
+INSERT INTO [SysRole] ([Id],[Name],[Description],[CreateTime],[CreatePerson]) values ('administrator','超级管理员','全部授权','10  1 2012 12:00AM','Administrator')
+
+INSERT INTO [SysRight] ([Id],[ModuleId],[RoleId],[Rightflag]) values ('administratorRightManage','RightManage','administrator',1)
+INSERT INTO [SysRight] ([Id],[ModuleId],[RoleId],[Rightflag]) values ('administratorModuleSetting','ModuleSetting','administrator',1)
+
+INSERT INTO [SysRightOperate] ([Id],[RightId],[KeyCode],[IsValid]) values ('administratorModuleSettingCreate','administratorModuleSetting','Create',1)
+INSERT INTO [SysRightOperate] ([Id],[RightId],[KeyCode],[IsValid]) values ('administratorModuleSettingDelete','administratorModuleSetting','Delete',1)
+INSERT INTO [SysRightOperate] ([Id],[RightId],[KeyCode],[IsValid]) values ('administratorModuleSettingDetails','administratorModuleSetting','Details',1)
+INSERT INTO [SysRightOperate] ([Id],[RightId],[KeyCode],[IsValid]) values ('administratorModuleSettingEdit','administratorModuleSetting','Edit',1)
+INSERT INTO [SysRightOperate] ([Id],[RightId],[KeyCode],[IsValid]) values ('administratorModuleSettingQuery','administratorModuleSetting','Query',1)
+INSERT INTO [SysRightOperate] ([Id],[RightId],[KeyCode],[IsValid]) values ('administratorModuleSettingSave','administratorModuleSetting','Save',1)
+
+
+INSERT INTO [SysUser] ([Id],[UserName],[Password],[TrueName],[Cards],[MobileNumber],[PhoneNumber],[QQ],[EmailAddress],[OtherContact],[Province],[City],[Village],[Address],[State],[CreateTime],[CreatePerson],[Sex],[Birthday],[JoinDate],[Marital],[Political],[Nationality],[Native],[School],[Professional],[Degree],[DepId],[PosId],[Expertise],[JobState],[Photo],[Attach]) 
+values ('admin','admin','01-92-02-3A-7B-BD-73-25-05-16-F0-69-DF-18-B5-00','系统管理员',NULL,NULL,'0108888888','','','','440000','440100','440101','小小村落',1,'11 18 2017  3:40PM','admin','男','05 18 1900 12:00AM','01  1 2013 12:00AM','未婚','中国','中国','安徽','美国哈佛大学','计算机工程','硕士','20000','20001','','在职',NULL,NULL)
+
+INSERT INTO [SysUserRole] (Id,[SysUserId],[SysRoleId]) values (newid(),'admin','administrator')
+

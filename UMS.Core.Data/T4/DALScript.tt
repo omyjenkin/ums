@@ -1,0 +1,38 @@
+﻿<#@ template language="C#" debug="True" #>
+<#@ output extension="cs" #>
+<#@ Assembly Name="System.Core" #>
+<#@ Assembly Name="$(SolutionDir)\UMS.Models\bin\Debug\UMS.Models.dll" #>
+<#@ import namespace="System.IO" #>
+<#@ Import Namespace="System.Linq" #>
+<#@ Import Namespace="System.Text" #>
+<#@ import namespace="System.Reflection" #>
+<#@ Import Namespace="System.Collections.Generic" #>
+<#@ Import Namespace="UMS.Models" #>
+
+<#@ include file="T4Toolbox.tt" #>
+<#@ include file="Include\EntityRepositoryTemplate.ttinclude" #>
+<#
+    string currentPath = Path.GetDirectoryName(Host.TemplateFile);
+    string projectPath =currentPath.Substring(0, currentPath.IndexOf(@"\T4"));
+    string solutionPath = currentPath.Substring(0, currentPath.IndexOf(@"\UMS.Core.Data"));
+	string dalPath=Path.Combine(solutionPath,"UMS.Core.Data");
+
+    string modelFile= Path.Combine(solutionPath, @"UMS.Models\bin\Debug\UMS.Models.dll");
+    byte[] fileData= File.ReadAllBytes(modelFile);
+    Assembly assembly = Assembly.Load(fileData);
+    Type baseType = typeof(EntityBase);
+    IEnumerable<Type> modelTypes = assembly.GetTypes().Where(m =>baseType.FullName.Equals(m.BaseType.FullName)&&!m.IsAbstract);
+    foreach(Type modelType in modelTypes)
+    {
+        T4ModelInfo model = new T4ModelInfo(modelType);
+		
+        
+        //实体仓储操作实现
+        EntityRepositoryTemplate rep= new EntityRepositoryTemplate(model);
+        var path = model.UseModuleDir
+            ? string.Format(@"{0}\Generated\Impl\{1}", dalPath, model.ModuleName)
+            : string.Format(@"{0}\Generated\Impl", dalPath);
+        rep.Output.Encoding = Encoding.UTF8;
+        rep.RenderToFile(Path.Combine(path, rep.FileName));
+    }
+#>
