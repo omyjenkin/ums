@@ -62,16 +62,16 @@ namespace UMS.Core.Data
 
         public void UpdateUserRole(string userId, string[] roleIds)
         {
-            string sql = " delete SysUserRole where SysUserId = @userId ";
-            string updateSql = " insert into SysUserRole(Id,SysRoleId,SysUserId) values(newid(),@roleId, @userId)";
+            string sql = " delete SysUserRole where SysUserId = @p0 ";
+            string updateSql = " insert into SysUserRole(Id,SysRoleId,SysUserId) values(newid(),@p0, @p1)";
 
-            ExecSql(" delete SysUserRole where SysUserId = @userId ", userId);
+            ExecSql(sql, userId);
 
             foreach (string roleid in roleIds)
             {
                 if (!string.IsNullOrWhiteSpace(roleid))
                 {
-                    ExecSql(updateSql, new { @roleId = roleid, @userId = userId });
+                    ExecSql(updateSql, roleid, userId);
                 }
             }
         }

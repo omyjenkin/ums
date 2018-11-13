@@ -21,6 +21,8 @@ namespace UMS.Web.Controllers
         {
             var perms = GetPermission();
             ViewBag.Perm = perms;
+
+           
             return View();
         }
 
@@ -61,12 +63,12 @@ namespace UMS.Web.Controllers
                 }
                 else
                 {
-                    return Error("插入失败");
+                    return Error(Suggestion.InsertFail);
                 }
             }
             else
             {
-                return Error("插入失败");
+                return Error(Suggestion.InsertFail);
             }
         }
         #endregion
@@ -126,7 +128,7 @@ namespace UMS.Web.Controllers
         public JsonResult GetRoleListByUser(GridPager pager,string userId)
         {
             if (string.IsNullOrWhiteSpace(userId))
-                return Json(new OperationResult(OperationResultType.Error));
+                return Error("");
 
             pager.sort = "Name";
             var userList = UserService.GetRoleByUserId(ref pager, userId).ToList();
@@ -146,11 +148,11 @@ namespace UMS.Web.Controllers
 
             if (UserService.UpdateUserRole(userId, arr))
             {
-                return Json(new OperationResult(OperationResultType.Success, Suggestion.SetSucceed), JsonRequestBehavior.AllowGet);
+                return Success(Suggestion.SetSucceed);
             }
             else
             {
-                return Json(new OperationResult(OperationResultType.Error, Suggestion.SetFail), JsonRequestBehavior.AllowGet);
+                return Error(Suggestion.SetFail);
             }
 
         }

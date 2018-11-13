@@ -14,7 +14,6 @@ namespace UMS.Web.Controllers
 {
     public class ModuleController : BaseController
     {
-
         public ISysModuleService ModuleService { get; set; }
 
         public ISysModuleOperateService ModuleOptService { get; set; }
@@ -31,28 +30,30 @@ namespace UMS.Web.Controllers
         public JsonResult GetList()
         {
             var modules = ModuleService.List();
-           var moduleDTO= modules.Select(m => new
+            var moduleDTO = modules.Select(m => new
             {
-               
-               Id=m.Id,
-               Name=m.Name,
-               EnglishName = m.EnglishName,
-               ParentId = m.ParentId,
-               Url = m.Url,
-               Iconic = m.Iconic,
-               Sort = m.Sort,
-               Remark = m.Remark,
-               Enable=m.Enable,
-               CreateUser=m.CreateUser,
-               CreateTime=m.CreateTime,
-               IsLast=m.IsLast,
-               state = "open" ,// m.IsLast ? "open" : "closed",
-               _parentId=m.ParentId=="-1"?null: m.ParentId
-           });
+
+                Id = m.Id,
+                Name = m.Name,
+                EnglishName = m.EnglishName,
+                ParentId = m.ParentId,
+                Url = m.Url,
+                Iconic = m.Iconic,
+                Sort = m.Sort,
+                Remark = m.Remark,
+                Enable = m.Enable,
+                CreateUser = m.CreateUser,
+                CreateTime = m.CreateTime,
+                IsLast = m.IsLast,
+                state = "open",// m.IsLast ? "open" : "closed",
+                _parentId = m.ParentId == "-1" ? null : m.ParentId
+            });
             var json = new
             {
                 total = modules.Count(),
-                rows = moduleDTO
+                rows = moduleDTO,
+                sort = "Sort",
+                order = "asc"
             };
             return Json(json, JsonRequestBehavior.AllowGet);
         }
@@ -140,26 +141,24 @@ namespace UMS.Web.Controllers
             model.CreateUser = "admin";
             if (model != null && ModelState.IsValid)
             {
-
                 if (ModuleService.Insert(model) > 0)
                 {
                     //LogHandler.WriteServiceLog(GetUserId(), "Id" + model.Id + ",Name" + model.Name, "成功", "创建", "SysModule");
-                    return Json(new OperationResult(OperationResultType.Success));
+                    return Success();
                 }
                 else
                 {
                     //string ErrorCol = errors.Error;
                     //LogHandler.WriteServiceLog(GetUserId(), "Id" + model.Id + ",Name" + model.Name + "," + ErrorCol, "失败", "创建", "SysModule");
-                    return Json(new OperationResult(OperationResultType.Error, "插入失败"));
+                    return Error(Suggestion.InsertFail);
                 }
             }
             else
             {
-                return Json(new OperationResult(OperationResultType.Error, "插入失败"));
+                return Error(Suggestion.InsertFail);
             }
         }
         #endregion
-
 
         #region 创建
         [SupportFilter(ActionName = "Create")]
@@ -179,7 +178,7 @@ namespace UMS.Web.Controllers
         {
             if (info != null && ModelState.IsValid)
             {
-                SysModuleOperate entity = ModuleOptService.GetByKey(info.Id??string.Empty);
+                SysModuleOperate entity = ModuleOptService.GetByKey(info.Id ?? string.Empty);
                 if (entity != null)
                     return Json(new OperationResult(OperationResultType.Error), JsonRequestBehavior.AllowGet);
                 entity = new SysModuleOperate();
@@ -221,14 +220,14 @@ namespace UMS.Web.Controllers
 
         [HttpPost]
         [SupportFilter]
-        public JsonResult Edit(string id,SysModule model)
+        public JsonResult Edit(string id, SysModule model)
         {
             if (model != null && ModelState.IsValid)
             {
                 if (ModuleService.Update(model) > 0)
                 {
                     //LogHandler.WriteServiceLog(GetUserId(), "Id" + model.Id + ",Name" + model.Name, "成功", "修改", "系统菜单");
-                    return Json(new OperationResult(OperationResultType.Success,"修改成功！"));
+                    return Json(new OperationResult(OperationResultType.Success, "修改成功！"));
                 }
                 else
                 {
@@ -243,7 +242,6 @@ namespace UMS.Web.Controllers
             }
         }
         #endregion
-         
 
         #region 删除
 

@@ -5,6 +5,8 @@
             method: 'get',
             height: $(window).height() - 35,
             fitColumns: true,
+            sortName: 'Sort',
+            sortOrder: 'asc',
             treeField: 'Name',
             idField: 'Id',
             pagination: false,

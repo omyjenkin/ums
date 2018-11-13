@@ -841,3 +841,6 @@
      * 1: This method will include coordinates for <input type="image" /> elements (if the element
      *    is used to submit the form).
      * 2. This method will include the submit element's 
+     */
+})
+)

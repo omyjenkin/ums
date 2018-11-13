@@ -45,18 +45,18 @@ namespace UMS.Core.Data
                                 select r).First();
 
                 int rightflag = 0;
-                string sql1 = " select  COUNT(*) from SysRightOperate where RightId = @roleId + @moduleId and IsValid = 1";
-                string sql2 = " update SysRight set Rightflag = @rightflag where ModuleId = @moduleId and RoleId = @roleId";
+                string sql1 = " select  COUNT(*) from SysRightOperate where RightId = @p0 + @p1 and IsValid = 1";
+                string sql2 = " update SysRight set Rightflag = @p0 where ModuleId = @p1 and RoleId = @p2";
                 string sql3 = @" select COUNT(*) from SysRight where ModuleId in
-                (select Id from SysModule where ParentId = @parentId)
-                and RoleId = @roleId
+                (select Id from SysModule where ParentId = @p0)
+                and RoleId = @p1
                 and Rightflag = 1";
 
-                if (ExecSql(sql1, new { @roleId = sysRight.RoleId, @moduleId = sysRight.ModuleId }) > 0)
+                if (ExecSql(sql1, sysRight.RoleId, sysRight.ModuleId) > 0)
                 {
                     rightflag = 1;
                 }
-                ExecSql(sql2, new { @roleId = sysRight.RoleId, @moduleId = sysRight.ModuleId, @rightflag = rightflag });
+                ExecSql(sql2, rightflag, sysRight.RoleId, sysRight.ModuleId);
 
 
                 //计算下一层
@@ -68,9 +68,7 @@ namespace UMS.Core.Data
                     parentId = module.ParentId;
                     if (parentId == null)
                         break;
-
-
-                    if (ExecSql(sql3, new { @roleId = sysRight.RoleId, @moduleId = sysRight.ModuleId }) > 0)
+                    if (ExecSql(sql3, sysRight.RoleId, sysRight.ModuleId) > 0)
                     {
                         rightflag = 1;
                     }
@@ -78,7 +76,7 @@ namespace UMS.Core.Data
                     {
                         rightflag = 0;
                     }
-                    ExecSql(sql2, new { @roleId = sysRight.RoleId, @moduleId = sysRight.ModuleId, @rightflag = rightflag });
+                    ExecSql(sql2, rightflag, sysRight.RoleId, sysRight.ModuleId);
                 }
 
                 return 1;
@@ -97,20 +95,19 @@ namespace UMS.Core.Data
         {
             List<RightModuleDTO> result = null;
 
-            string sql = @" select a.Id, a.Name, a.KeyCode, a.ModuleId, ISNULL(b.IsValid,0) as IsValid,a.Sort,@roleId+@moduleId as RightId
+            string sql = @" select a.Id, a.Name, a.KeyCode, a.ModuleId, ISNULL(b.IsValid,0) as IsValid,a.Sort,@p0+@p1 as RightId
              from SysModuleOperate a
              left outer join(
                  select c.Id, a.IsValid from SysRightOperate a, SysRight b, SysModuleOperate c
                  where RightId in
-                 (select Id From SysRight where RoleId = @roleId and ModuleId = @moduleId)
+                 (select Id From SysRight where RoleId = @p0 and ModuleId = @p1)
                   and a.RightId=b.Id
                   and b.ModuleId= c.ModuleId
                   and a.KeyCode = c.KeyCode) b
             on a.Id = b.Id
-            where a.ModuleId =@moduleId";
+            where a.ModuleId =@p1";
 
-            var param = new SqlParameter[] { new SqlParameter("@roleId", roleId), new SqlParameter("@moduleId", moduleId) };  
-            result = QuerySql<RightModuleDTO>(sql, param).ToList();
+            result = QuerySql<RightModuleDTO>(sql, roleId, moduleId).ToList();
 
 
             return result;

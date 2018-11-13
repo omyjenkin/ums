@@ -167,44 +167,16 @@ namespace UMS.Web.Controllers
                 JsonRequestBehavior = behavior,
                 FormateStr = "yyyy-MM-dd HH:mm:ss"
             };
-        }
-        /// <summary>
-        /// 返回JsonResult.24         /// </summary>
-        /// <param name="data">数据</param>
-        /// <param name="behavior">行为</param>
-        /// <param name="format">json中dateTime类型的格式</param>
-        /// <returns>Json</returns>
-        protected JsonResult MyJson(object data, JsonRequestBehavior behavior, string format)
-        {
-            return new ToJsonResult
-            {
-                Data = data,
-                JsonRequestBehavior = behavior,
-                FormateStr = format
-            };
-        }
-        /// <summary>
-        /// 返回JsonResult42         /// </summary>
-        /// <param name="data">数据</param>
-        /// <param name="format">数据格式</param>
-        /// <returns>Json</returns>
-        protected JsonResult MyJson(object data, string format)
-        {
-            return new ToJsonResult
-            {
-                Data = data,
-                FormateStr = format
-            };
-        }
+        }     
 
-        protected JsonResult Success()
+        protected JsonResult Success(string message="")
         {
-            return Json(new OperationResult(OperationResultType.Success));
+            return Json(new OperationResult(OperationResultType.Success,message),JsonRequestBehavior.AllowGet);
         }
 
         protected JsonResult Error(string message)
         {
-            return Json(new OperationResult(OperationResultType.Error, message));
+            return Json(new OperationResult(OperationResultType.Error, message), JsonRequestBehavior.AllowGet);
         }
     }
 

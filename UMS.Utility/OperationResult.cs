@@ -43,7 +43,19 @@ namespace UMS.Utility
         public OperationResult(OperationResultType resultType, string message, object appendData)
             : this(resultType, message)
         {
-            AppendData = appendData;
+            Data = appendData;
+        }
+
+        /// <summary>
+        ///     初始化一个 定义返回消息与附加数据的业务操作结果信息类 的新实例
+        /// </summary>
+        /// <param name="resultType">业务操作结果类型</param>
+        /// <param name="message">业务返回消息</param>
+        /// <param name="appendData">业务返回数据</param>
+        public OperationResult(OperationResultType resultType,object appendData)
+            : this(resultType)
+        {
+            Data = appendData;
         }
 
         /// <summary>
@@ -68,7 +80,7 @@ namespace UMS.Utility
         public OperationResult(OperationResultType resultType, string message, string logMessage, object appendData)
             : this(resultType, message, logMessage)
         {
-            AppendData = appendData;
+            Data = appendData;
         }
 
         #endregion
@@ -93,7 +105,7 @@ namespace UMS.Utility
         /// <summary>
         ///     获取或设置 操作结果附加信息
         /// </summary>
-        public object AppendData { get; set; }
+        public object Data { get; set; }
 
         #endregion
     }

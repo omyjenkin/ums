@@ -30,7 +30,7 @@ namespace UMS.Models
         /// <summary>
         /// UserName
         /// </summary>
-    	[Display(Name="UserName")]
+    	[Display(Name="UserName")][NotNullExpression]
         public string UserName { get; set; }
     	   
         

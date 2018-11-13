@@ -27,14 +27,14 @@ namespace UMS.Web.Interceptor
             }
             catch (Exception exception)
             {
-                
+
                 SysLog message = new SysLog
                 {
                     Category = LoggerType.SystemLog.ToString(),
                     Message = exception.Message,
                     Exception = exception.StackTrace,
                     Method = exception.TargetSite.Name,
-                    Params = string.Join(",", invocation.Arguments),
+                    Params = string.Join(",", (invocation.Arguments.Length > 0) ? invocation.Arguments[0].ToString() : null),
                     CreateTime = DateTime.Now
                 };
 

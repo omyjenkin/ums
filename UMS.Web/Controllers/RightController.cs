@@ -93,7 +93,7 @@ namespace UMS.Web.Controllers
             var list = SysRightService.GetRightByRoleAndModule(roleId, moduleId);
             var json = new
             {
-                total = pager.totalRows,
+                total = list.Count,
                 rows = list
 
             };

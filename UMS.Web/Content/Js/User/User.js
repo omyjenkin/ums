@@ -83,29 +83,5 @@
         } else { $.messageBox5s('提示', '@Suggestion.PleaseChooseToOperatingRecords'); }
     });
 
-    $("#btnSave").click(function () {
-        console.log('aaaaa');
-        $.ajax({
-            url: "/User/Create",
-            type: "Post",
-            data: $("#CreateForm").serialize(),
-            dataType: "json",
-            success: function (data) {
-                if (data.ResultType == 0) {
-                    window.parent.frameReturnByMes(data.Message);
-                    window.parent.frameReturnByReload(true);
-                    window.parent.frameReturnByClose()
-                }
-                else {
-                    window.parent.frameReturnByMes(data.Message);
-                }
-            }
-        });
-    });
-    $("#btnReturn").click(function () {
-        $("#modalwindow").window('close');
-        window.parent.frameReturnByClose();
-    });
-
     $.getScript("/Content/Js/ext.js");
 })

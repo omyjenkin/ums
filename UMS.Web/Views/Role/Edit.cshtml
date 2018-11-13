@@ -49,17 +49,17 @@
     @Html.ValidationSummary(true)
     <div class="container panel-body">
         <div class="form-group">
-            @Html.LabelFor(model => model.Id)：
+            @Html.LabelFor(model => model.Id)
             @Html.EditorFor(model => model.Id, new { @class = "form-control" }, true)
             <span class="help-inline">@Html.ValidationMessageFor(model => model.Id)</span>
         </div>
         <div class="form-group">
-            @Html.LabelFor(model => model.Name)：
+            @Html.LabelFor(model => model.Name)
             @Html.EditorFor(model => model.Name, new { @class = "form-control" }, true)
             @Html.ValidationMessageFor(model => model.Name)
         </div>
         <div class="form-group">
-            @Html.LabelFor(model => model.Description)：
+            @Html.LabelFor(model => model.Description)
             @Html.EditorFor(model => model.Description, new { @class = "form-control" }, true)
             @Html.ValidationMessageFor(model => model.Description)
         </div>

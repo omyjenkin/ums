@@ -201,6 +201,7 @@
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\ExceptionController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LogController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\ModuleController.cs" />
     <Compile Include="Controllers\RightController.cs" />
@@ -279,6 +280,7 @@
     <Content Include="Content\Js\Common.js" />
     <Content Include="Content\Js\ext.js" />
     <Content Include="Content\Js\Home\Home.js" />
+    <Content Include="Content\Js\Log\Log.js" />
     <Content Include="Content\Js\Module\Module.js" />
     <Content Include="Content\Js\Right\Right.js" />
     <Content Include="Content\Js\Role\Role.js" />
@@ -542,6 +544,7 @@
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <Content Include="Scripts\jquery.easyui.plus.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\jquery.easyui.min.js" />
     <Content Include="Scripts\jquery.form.js" />
@@ -602,6 +605,7 @@
     <Content Include="Views\Right\Index.cshtml" />
     <Content Include="Views\Exception\Error.cshtml" />
     <Content Include="Views\User\GetRoleByUser.cshtml" />
+    <Content Include="Views\Log\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
