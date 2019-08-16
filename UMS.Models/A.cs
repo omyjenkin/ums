@@ -21,23 +21,23 @@ namespace UMS.Models
     public partial class A:EntityBase
     {
         /// <summary>
-        /// id
+        /// 
         /// </summary>
-    	[Display(Name="id")][Key]
+    	[Display(Name="")][Key]
         public int id { get; set; }
     	   
         
         /// <summary>
-        /// mark
+        /// 
         /// </summary>
-    	[Display(Name="mark")]
+    	[Display(Name="")]
         public string mark { get; set; }
     	   
         
         /// <summary>
-        /// createtime
+        /// 
         /// </summary>
-    	[Display(Name="createtime")]
+    	[Display(Name="")]
         public Nullable<System.DateTime> createtime { get; set; }
     	   
         

@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.168
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UMS.Web", "UMS.Web\UMS.Web.csproj", "{471437E4-F978-4A91-9349-1BF502E00071}"
 EndProject
@@ -44,6 +44,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UMS.Core.Data", "UMS.Core.Data\UMS.Core.Data.csproj", "{7643825B-136D-4082-BB76-BACE685391D7}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UMS.Log", "UMS.Log\UMS.Log.csproj", "{ACA8A0C5-2381-45A3-864B-3AF6FDD00F0E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "09_MIS", "09_MIS", "{793F0E6D-A212-4123-9EC1-9FF0239B0D41}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -123,5 +125,8 @@ Global
 		{4BACA8A0-11E7-4B27-8C34-A04E16F9260D} = {88576029-F7FE-41AA-BE9C-74154B5966F3}
 		{7643825B-136D-4082-BB76-BACE685391D7} = {88576029-F7FE-41AA-BE9C-74154B5966F3}
 		{ACA8A0C5-2381-45A3-864B-3AF6FDD00F0E} = {1A4D2645-C3F4-404C-B95F-6185FF79BC10}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {64DB846E-7577-4F24-87F6-03914DE8E0E9}
 	EndGlobalSection
 EndGlobal

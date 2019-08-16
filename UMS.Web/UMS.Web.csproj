@@ -189,6 +189,10 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Areas\MIS\Controllers\ArticleController.cs" />
+    <Compile Include="Areas\MIS\Controllers\ManageArticleController.cs" />
+    <Compile Include="Areas\MIS\Controllers\MyArticleController.cs" />
+    <Compile Include="Areas\MIS\MISAreaRegistration.cs" />
     <Compile Include="Common\AdminCookieContext.cs" />
     <Compile Include="Common\AdminUserContext.cs" />
     <Compile Include="Common\HtmlHelperExt.cs" />
@@ -277,6 +281,7 @@
     <Content Include="Content\Images\tools_bg.gif" />
     <Content Include="Content\Images\upfile_bg.gif" />
     <Content Include="Content\Js\Account\Login.js" />
+    <Content Include="Scripts\additional-validate.js" />
     <Content Include="Content\Js\Common.js" />
     <Content Include="Content\Js\ext.js" />
     <Content Include="Content\Js\Home\Home.js" />
@@ -531,6 +536,10 @@
     <Content Include="Scripts\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="Scripts\bootstrap\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="Scripts\bootstrap\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Areas\MIS\Views\web.config" />
+    <Content Include="Areas\MIS\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\MIS\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\MIS\Views\Article\Index.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\bootstrap\css\bootstrap-theme.css" />
     <Content Include="Scripts\bootstrap\css\bootstrap-theme.min.css" />
@@ -609,6 +618,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\MIS\Views\ManageArticle\" />
+    <Folder Include="Areas\MIS\Views\MyArticle\" />
     <Folder Include="Views\Base\" />
   </ItemGroup>
   <ItemGroup>

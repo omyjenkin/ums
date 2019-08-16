@@ -21,44 +21,44 @@ namespace UMS.Models
     public partial class SysModuleOperate:EntityBase
     {
         /// <summary>
-        /// Id
+        /// 
         /// </summary>
-    	[Display(Name="Id")][Key]
+    	[Display(Name="")][Key]
         public string Id { get; set; }
     	   
         
         /// <summary>
-        /// Name
+        /// 
         /// </summary>
-    	[Display(Name="Name")]
+    	[Display(Name="")]
         public string Name { get; set; }
     	   
         
         /// <summary>
-        /// KeyCode
+        /// 
         /// </summary>
-    	[Display(Name="KeyCode")]
+    	[Display(Name="")]
         public string KeyCode { get; set; }
     	   
         
         /// <summary>
-        /// ModuleId
+        /// 
         /// </summary>
-    	[Display(Name="ModuleId")]
+    	[Display(Name="")]
         public string ModuleId { get; set; }
     	   
         
         /// <summary>
-        /// IsValid
+        /// 
         /// </summary>
-    	[Display(Name="IsValid")]
+    	[Display(Name="")]
         public bool IsValid { get; set; }
     	   
         
         /// <summary>
-        /// Sort
+        /// 
         /// </summary>
-    	[Display(Name="Sort")]
+    	[Display(Name="")]
         public int Sort { get; set; }
     	   
         

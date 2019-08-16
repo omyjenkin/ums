@@ -22,7 +22,7 @@
                 success: function (data) {
                     if (data.ResultType == 0) {
                         window.parent.frameReturnByMes(data.Message);
-                       // window.parent.frameReturnByReload(true);
+                        window.parent.frameReturnTreeGridByReload(true);
                         window.parent.frameReturnByClose()
                     }
                     else {

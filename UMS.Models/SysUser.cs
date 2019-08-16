@@ -21,51 +21,37 @@ namespace UMS.Models
     public partial class SysUser:EntityBase
     {
         /// <summary>
-        /// Id
+        /// 编码
         /// </summary>
-    	[Display(Name="Id")][Key]
+    	[Display(Name="编码")][Key]
         public string Id { get; set; }
     	   
         
         /// <summary>
-        /// UserName
+        /// 密码
         /// </summary>
-    	[Display(Name="UserName")][NotNullExpression]
-        public string UserName { get; set; }
-    	   
-        
-        /// <summary>
-        /// Password
-        /// </summary>
-    	[Display(Name="Password")]
+    	[Display(Name="密码")]
         public string Password { get; set; }
     	   
         
         /// <summary>
-        /// TrueName
+        /// 姓名
         /// </summary>
-    	[Display(Name="TrueName")]
+    	[Display(Name="姓名")]
         public string TrueName { get; set; }
     	   
         
         /// <summary>
-        /// Cards
+        /// 移动电话
         /// </summary>
-    	[Display(Name="Cards")]
-        public string Cards { get; set; }
-    	   
-        
-        /// <summary>
-        /// MobileNumber
-        /// </summary>
-    	[Display(Name="MobileNumber")]
+    	[Display(Name="移动电话")]
         public string MobileNumber { get; set; }
     	   
         
         /// <summary>
-        /// PhoneNumber
+        /// 联系电话
         /// </summary>
-    	[Display(Name="PhoneNumber")]
+    	[Display(Name="联系电话")]
         public string PhoneNumber { get; set; }
     	   
         
@@ -77,164 +63,171 @@ namespace UMS.Models
     	   
         
         /// <summary>
-        /// EmailAddress
+        /// 邮件
         /// </summary>
-    	[Display(Name="EmailAddress")]
+    	[Display(Name="邮件")]
         public string EmailAddress { get; set; }
     	   
         
         /// <summary>
-        /// OtherContact
+        /// 其他方式
         /// </summary>
-    	[Display(Name="OtherContact")]
+    	[Display(Name="其他方式")]
         public string OtherContact { get; set; }
     	   
         
         /// <summary>
-        /// Province
+        /// 省
         /// </summary>
-    	[Display(Name="Province")]
+    	[Display(Name="省")]
         public string Province { get; set; }
     	   
         
         /// <summary>
-        /// City
+        /// 市
         /// </summary>
-    	[Display(Name="City")]
+    	[Display(Name="市")]
         public string City { get; set; }
     	   
         
         /// <summary>
-        /// Village
+        /// 县
         /// </summary>
-    	[Display(Name="Village")]
+    	[Display(Name="县")]
         public string Village { get; set; }
     	   
         
         /// <summary>
-        /// Address
+        /// 地址
         /// </summary>
-    	[Display(Name="Address")]
+    	[Display(Name="地址")]
         public string Address { get; set; }
     	   
         
         /// <summary>
-        /// State
+        /// 启用
         /// </summary>
-    	[Display(Name="State")]
+    	[Display(Name="启用")]
         public Nullable<bool> State { get; set; }
     	   
         
         /// <summary>
-        /// CreateTime
+        /// 创建时间
         /// </summary>
-    	[Display(Name="CreateTime")]
+    	[Display(Name="创建时间")]
         public Nullable<System.DateTime> CreateTime { get; set; }
     	   
         
         /// <summary>
-        /// CreateUser
+        /// 创建人
         /// </summary>
-    	[Display(Name="CreateUser")]
+    	[Display(Name="创建人")]
         public string CreateUser { get; set; }
     	   
         
         /// <summary>
-        /// Sex
+        /// 性别
         /// </summary>
-    	[Display(Name="Sex")]
+    	[Display(Name="性别")]
         public string Sex { get; set; }
     	   
         
         /// <summary>
-        /// Birthday
+        /// 出生日期
         /// </summary>
-    	[Display(Name="Birthday")]
+    	[Display(Name="出生日期")]
         public Nullable<System.DateTime> Birthday { get; set; }
     	   
         
         /// <summary>
-        /// JoinDate
+        /// 注册日期
         /// </summary>
-    	[Display(Name="JoinDate")]
+    	[Display(Name="注册日期")]
         public Nullable<System.DateTime> JoinDate { get; set; }
     	   
         
         /// <summary>
-        /// Marital
+        /// 婚姻
         /// </summary>
-    	[Display(Name="Marital")]
+    	[Display(Name="婚姻")]
         public string Marital { get; set; }
     	   
         
         /// <summary>
-        /// Political
+        /// 党派
         /// </summary>
-    	[Display(Name="Political")]
+    	[Display(Name="党派")]
         public string Political { get; set; }
     	   
         
         /// <summary>
-        /// Nationality
+        /// 民族
         /// </summary>
-    	[Display(Name="Nationality")]
+    	[Display(Name="民族")]
         public string Nationality { get; set; }
     	   
         
         /// <summary>
-        /// Native
+        /// 籍贯
         /// </summary>
-    	[Display(Name="Native")]
+    	[Display(Name="籍贯")]
         public string Native { get; set; }
     	   
         
         /// <summary>
-        /// School
+        /// 毕业学校
         /// </summary>
-    	[Display(Name="School")]
+    	[Display(Name="毕业学校")]
         public string School { get; set; }
     	   
         
         /// <summary>
-        /// Professional
+        /// 就读专业
         /// </summary>
-    	[Display(Name="Professional")]
+    	[Display(Name="就读专业")]
         public string Professional { get; set; }
     	   
         
         /// <summary>
-        /// Degree
+        /// 学历
         /// </summary>
-    	[Display(Name="Degree")]
+    	[Display(Name="学历")]
         public string Degree { get; set; }
     	   
         
         /// <summary>
-        /// Expertise
+        /// 个人简介
         /// </summary>
-    	[Display(Name="Expertise")]
+    	[Display(Name="个人简介")]
         public string Expertise { get; set; }
     	   
         
         /// <summary>
-        /// JobState
+        /// 在职状况
         /// </summary>
-    	[Display(Name="JobState")]
+    	[Display(Name="在职状况")]
         public string JobState { get; set; }
     	   
         
         /// <summary>
-        /// Photo
+        /// 照片
         /// </summary>
-    	[Display(Name="Photo")]
+    	[Display(Name="照片")]
         public string Photo { get; set; }
     	   
         
         /// <summary>
-        /// Attach
+        /// 附件
         /// </summary>
-    	[Display(Name="Attach")]
+    	[Display(Name="附件")]
         public string Attach { get; set; }
+    	   
+        
+        /// <summary>
+        /// 身份证
+        /// </summary>
+    	[Display(Name="身份证")]
+        public string IdCards { get; set; }
     	   
         
     }

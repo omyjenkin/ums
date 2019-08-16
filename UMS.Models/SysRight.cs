@@ -21,30 +21,30 @@ namespace UMS.Models
     public partial class SysRight:EntityBase
     {
         /// <summary>
-        /// Id
+        /// 
         /// </summary>
-    	[Display(Name="Id")][Key]
+    	[Display(Name="")][Key]
         public string Id { get; set; }
     	   
         
         /// <summary>
-        /// RoleId
+        /// 
         /// </summary>
-    	[Display(Name="RoleId")]
+    	[Display(Name="")]
         public string RoleId { get; set; }
     	   
         
         /// <summary>
-        /// ModuleId
+        /// 
         /// </summary>
-    	[Display(Name="ModuleId")]
+    	[Display(Name="")]
         public string ModuleId { get; set; }
     	   
         
         /// <summary>
-        /// Rightflag
+        /// 
         /// </summary>
-    	[Display(Name="Rightflag")]
+    	[Display(Name="")]
         public bool Rightflag { get; set; }
     	   
         

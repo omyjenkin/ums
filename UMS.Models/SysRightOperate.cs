@@ -21,30 +21,30 @@ namespace UMS.Models
     public partial class SysRightOperate:EntityBase
     {
         /// <summary>
-        /// Id
+        /// 
         /// </summary>
-    	[Display(Name="Id")][Key]
+    	[Display(Name="")][Key]
         public string Id { get; set; }
     	   
         
         /// <summary>
-        /// RightId
+        /// 
         /// </summary>
-    	[Display(Name="RightId")]
+    	[Display(Name="")]
         public string RightId { get; set; }
     	   
         
         /// <summary>
-        /// KeyCode
+        /// 
         /// </summary>
-    	[Display(Name="KeyCode")]
+    	[Display(Name="")]
         public string KeyCode { get; set; }
     	   
         
         /// <summary>
-        /// IsValid
+        /// 
         /// </summary>
-    	[Display(Name="IsValid")]
+    	[Display(Name="")]
         public bool IsValid { get; set; }
     	   
         

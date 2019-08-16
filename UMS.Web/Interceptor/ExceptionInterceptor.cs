@@ -41,6 +41,7 @@ namespace UMS.Web.Interceptor
                 Logger.Debug(LoggerType.SystemLog, message, exception);
 
             }
+            //finally { }
         }
     }
 }

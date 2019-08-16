@@ -13,6 +13,46 @@
           <Property Name="mark" Type="nvarchar" MaxLength="50" />
           <Property Name="createtime" Type="datetime" />
         </EntityType>
+        <EntityType Name="B">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="mark" Type="varchar" MaxLength="50" />
+          <Property Name="createtime" Type="datetime" />
+        </EntityType>
+        <EntityType Name="MisArticle">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="ChannelId" Type="int" Nullable="false" />
+          <Property Name="CategoryId" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Title" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="ImgUrl" Type="varchar" MaxLength="255" />
+          <Property Name="BodyContent" Type="varchar" MaxLength="8000" />
+          <Property Name="Sort" Type="int" />
+          <Property Name="Click" Type="int" />
+          <Property Name="CheckFlag" Type="int" Nullable="false" />
+          <Property Name="Checker" Type="varchar" MaxLength="50" />
+          <Property Name="CheckDateTime" Type="datetime" />
+          <Property Name="Creater" Type="varchar" MaxLength="50" />
+          <Property Name="CreateTime" Type="datetime" />
+        </EntityType>
+        <EntityType Name="MisArticleCategory">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="ChannelId" Type="int" />
+          <Property Name="Name" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="ParentId" Type="varchar" MaxLength="50" />
+          <Property Name="Sort" Type="int" />
+          <Property Name="ImgUrl" Type="varchar" MaxLength="255" />
+          <Property Name="BodyContent" Type="varchar" MaxLength="8000" />
+          <Property Name="CreateTime" Type="datetime" />
+          <Property Name="Enable" Type="bit" Nullable="false" />
+        </EntityType>
         <EntityType Name="SysLog">
           <Key>
             <PropertyRef Name="Id" />
@@ -102,10 +142,9 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="UserName" Type="varchar" MaxLength="200" Nullable="false" />
           <Property Name="Password" Type="varchar" MaxLength="200" Nullable="false" />
           <Property Name="TrueName" Type="varchar" MaxLength="200" />
-          <Property Name="Cards" Type="varchar" MaxLength="50" />
+          <Property Name="IdCards" Type="varchar" MaxLength="50" />
           <Property Name="MobileNumber" Type="varchar" MaxLength="200" />
           <Property Name="PhoneNumber" Type="varchar" MaxLength="200" />
           <Property Name="QQ" Type="varchar" MaxLength="50" />
@@ -143,6 +182,9 @@
         </EntityType>
         <EntityContainer Name="UMSModelsStoreContainer">
           <EntitySet Name="A" EntityType="Self.A" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="B" EntityType="Self.B" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MisArticle" EntityType="Self.MisArticle" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MisArticleCategory" EntityType="Self.MisArticleCategory" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="SysLog" EntityType="Self.SysLog" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="SysLoginInfo" EntityType="Self.SysLoginInfo" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="SysModule" EntityType="Self.SysModule" Schema="dbo" store:Type="Tables" />
@@ -205,6 +247,9 @@
           <EntitySet Name="SysRole" EntityType="UMS.Models.SysRole" />
           <EntitySet Name="SysUser" EntityType="UMS.Models.SysUser" />
           <EntitySet Name="SysLog" EntityType="UMS.Models.SysLog" />
+          <EntitySet Name="MisArticle" EntityType="UMS.Models.MisArticle" />
+          <EntitySet Name="MisArticleCategory" EntityType="UMS.Models.MisArticleCategory" />
+          <EntitySet Name="B" EntityType="UMS.Models.B" />
         </EntityContainer>
         <EntityType Name="SysLoginInfo">
           <Key>
@@ -260,10 +305,8 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="UserName" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
           <Property Name="Password" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
           <Property Name="TrueName" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
-          <Property Name="Cards" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="MobileNumber" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
           <Property Name="PhoneNumber" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
           <Property Name="QQ" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
@@ -290,6 +333,7 @@
           <Property Name="JobState" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="Photo" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
           <Property Name="Attach" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="IdCards" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="SysLog">
           <Key>
@@ -304,6 +348,46 @@
           <Property Name="Line" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Params" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
           <Property Name="CreateTime" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="MisArticle">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ChannelId" Type="Int32" Nullable="false" />
+          <Property Name="CategoryId" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Title" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="ImgUrl" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="BodyContent" Type="String" MaxLength="8000" FixedLength="false" Unicode="false" />
+          <Property Name="Sort" Type="Int32" />
+          <Property Name="Click" Type="Int32" />
+          <Property Name="CheckFlag" Type="Int32" Nullable="false" />
+          <Property Name="Checker" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CheckDateTime" Type="DateTime" Precision="3" />
+          <Property Name="Creater" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CreateTime" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="MisArticleCategory">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ChannelId" Type="Int32" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="ParentId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Sort" Type="Int32" />
+          <Property Name="ImgUrl" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="BodyContent" Type="String" MaxLength="8000" FixedLength="false" Unicode="false" />
+          <Property Name="CreateTime" Type="DateTime" Precision="3" />
+          <Property Name="Enable" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="B">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="mark" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="createtime" Type="DateTime" Precision="3" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -408,6 +492,7 @@
           <EntitySetMapping Name="SysUser">
             <EntityTypeMapping TypeName="UMS.Models.SysUser">
               <MappingFragment StoreEntitySet="SysUser">
+                <ScalarProperty Name="IdCards" ColumnName="IdCards" />
                 <ScalarProperty Name="Attach" ColumnName="Attach" />
                 <ScalarProperty Name="Photo" ColumnName="Photo" />
                 <ScalarProperty Name="JobState" ColumnName="JobState" />
@@ -434,10 +519,8 @@
                 <ScalarProperty Name="QQ" ColumnName="QQ" />
                 <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
                 <ScalarProperty Name="MobileNumber" ColumnName="MobileNumber" />
-                <ScalarProperty Name="Cards" ColumnName="Cards" />
                 <ScalarProperty Name="TrueName" ColumnName="TrueName" />
                 <ScalarProperty Name="Password" ColumnName="Password" />
-                <ScalarProperty Name="UserName" ColumnName="UserName" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -457,6 +540,49 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="MisArticle">
+            <EntityTypeMapping TypeName="UMS.Models.MisArticle">
+              <MappingFragment StoreEntitySet="MisArticle">
+                <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+                <ScalarProperty Name="Creater" ColumnName="Creater" />
+                <ScalarProperty Name="CheckDateTime" ColumnName="CheckDateTime" />
+                <ScalarProperty Name="Checker" ColumnName="Checker" />
+                <ScalarProperty Name="CheckFlag" ColumnName="CheckFlag" />
+                <ScalarProperty Name="Click" ColumnName="Click" />
+                <ScalarProperty Name="Sort" ColumnName="Sort" />
+                <ScalarProperty Name="BodyContent" ColumnName="BodyContent" />
+                <ScalarProperty Name="ImgUrl" ColumnName="ImgUrl" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+                <ScalarProperty Name="ChannelId" ColumnName="ChannelId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MisArticleCategory">
+            <EntityTypeMapping TypeName="UMS.Models.MisArticleCategory">
+              <MappingFragment StoreEntitySet="MisArticleCategory">
+                <ScalarProperty Name="Enable" ColumnName="Enable" />
+                <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+                <ScalarProperty Name="BodyContent" ColumnName="BodyContent" />
+                <ScalarProperty Name="ImgUrl" ColumnName="ImgUrl" />
+                <ScalarProperty Name="Sort" ColumnName="Sort" />
+                <ScalarProperty Name="ParentId" ColumnName="ParentId" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ChannelId" ColumnName="ChannelId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="B">
+            <EntityTypeMapping TypeName="UMS.Models.B">
+              <MappingFragment StoreEntitySet="B">
+                <ScalarProperty Name="createtime" ColumnName="createtime" />
+                <ScalarProperty Name="mark" ColumnName="mark" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
@@ -470,7 +596,7 @@
     </Connection>
     <Options>
       <DesignerInfoPropertySet>
-        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="ValidateOnBuild" Value="True" />
         <DesignerProperty Name="EnablePluralization" Value="false" />
         <DesignerProperty Name="IncludeForeignKeysInModel" Value="false" />
         <DesignerProperty Name="UseLegacyProvider" Value="false" />

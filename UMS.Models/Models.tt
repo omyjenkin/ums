@@ -1,5 +1,6 @@
 ﻿<#@ template language="C#" debug="false" hostspecific="true"#>
-<#@ include file="EF6.Utility.CS.ttinclude"#><#@ 
+<#@ include file="EF6.Utility.CS.ttinclude"#>
+<#@ include file="GetSummary.ttinclude"#><#@ 
  output extension=".cs"#><#
 
 const string inputFile = @"Models.edmx";
@@ -83,7 +84,7 @@ using System.ComponentModel.DataAnnotations;
 		   var keyName=""; 
            if(entity.KeyMembers.Contains(edmProperty.Name))          
               keyName="[Key]";
-            WriteProperty(code,edmProperty,keyName);    
+            WriteProperty(code,edmProperty,keyName,entity);    
     #>
 	   
     
@@ -749,7 +750,7 @@ public static void ArgumentNotNull<T>(T arg, string name) where T : class
 #>
 
 <#+
-void WriteProperty(CodeGenerationTools code, EdmProperty edmProperty,string keyName)
+void WriteProperty(CodeGenerationTools code, EdmProperty edmProperty,string keyName,EntityType entity)
 {
     if (edmProperty.Documentation != null && edmProperty.Documentation.Summary != null)
     { 
@@ -764,7 +765,7 @@ void WriteProperty(CodeGenerationTools code, EdmProperty edmProperty,string keyN
     else
     {
         WriteProperty(Accessibility.ForProperty(edmProperty),
-                      code.Escape(edmProperty.Name),
+                      code.Escape(getColumnSummary(code.Escape(entity),code.Escape(edmProperty))),
                       code.Escape(edmProperty.TypeUsage),
                       code.Escape(edmProperty),
                       code.SpaceAfter(Accessibility.ForGetter(edmProperty)),

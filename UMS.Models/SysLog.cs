@@ -21,65 +21,65 @@ namespace UMS.Models
     public partial class SysLog:EntityBase
     {
         /// <summary>
-        /// Id
+        /// 
         /// </summary>
-    	[Display(Name="Id")][Key]
+    	[Display(Name="")][Key]
         public System.Guid Id { get; set; }
     	   
         
         /// <summary>
-        /// Category
+        /// 
         /// </summary>
-    	[Display(Name="Category")]
+    	[Display(Name="")]
         public string Category { get; set; }
     	   
         
         /// <summary>
-        /// ErrorUrl
+        /// 
         /// </summary>
-    	[Display(Name="ErrorUrl")]
+    	[Display(Name="")]
         public string ErrorUrl { get; set; }
     	   
         
         /// <summary>
-        /// Message
+        /// 
         /// </summary>
-    	[Display(Name="Message")]
+    	[Display(Name="")]
         public string Message { get; set; }
     	   
         
         /// <summary>
-        /// Exception
+        /// 
         /// </summary>
-    	[Display(Name="Exception")]
+    	[Display(Name="")]
         public string Exception { get; set; }
     	   
         
         /// <summary>
-        /// Method
+        /// 
         /// </summary>
-    	[Display(Name="Method")]
+    	[Display(Name="")]
         public string Method { get; set; }
     	   
         
         /// <summary>
-        /// Line
+        /// 
         /// </summary>
-    	[Display(Name="Line")]
+    	[Display(Name="")]
         public string Line { get; set; }
     	   
         
         /// <summary>
-        /// Params
+        /// 
         /// </summary>
-    	[Display(Name="Params")]
+    	[Display(Name="")]
         public string Params { get; set; }
     	   
         
         /// <summary>
-        /// CreateTime
+        /// 
         /// </summary>
-    	[Display(Name="CreateTime")]
+    	[Display(Name="")]
         public Nullable<System.DateTime> CreateTime { get; set; }
     	   
         

@@ -52,7 +52,7 @@
             queryStr = "%";
         }
         $('#List').datagrid({
-            url: '@Url.Action("GetList")?queryStr=' + encodeURI(queryStr)
+            url: '/Role/GetList?queryStr=' + encodeURI(queryStr)
         });
 
     });

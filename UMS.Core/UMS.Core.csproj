@@ -41,7 +41,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Generated\IAService.generated.cs" />
+    <Compile Include="Generated\IMisArticleCategoryService.generated.cs" />
+    <Compile Include="Generated\IMisArticleService.generated.cs" />
     <Compile Include="Generated\Impl\AService.generated.cs" />
+    <Compile Include="Generated\Impl\MisArticleCategoryService.generated.cs" />
+    <Compile Include="Generated\Impl\MisArticleService.generated.cs" />
     <Compile Include="Generated\Impl\SysLoginInfoService.generated.cs" />
     <Compile Include="Generated\Impl\SysLogService.generated.cs" />
     <Compile Include="Generated\Impl\SysModuleOperateService.generated.cs" />
@@ -92,6 +96,8 @@
       <LastGenOutput>BLLScript.cs</LastGenOutput>
       <LastOutputs>
 ..\Generated\Impl\AService.generated.cs
+..\Generated\Impl\MisArticleCategoryService.generated.cs
+..\Generated\Impl\MisArticleService.generated.cs
 ..\Generated\Impl\SysLoginInfoService.generated.cs
 ..\Generated\Impl\SysLogService.generated.cs
 ..\Generated\Impl\SysModuleOperateService.generated.cs
@@ -109,6 +115,8 @@
       <LastGenOutput>IBLLScript.cs</LastGenOutput>
       <LastOutputs>
 ..\Generated\IAService.generated.cs
+..\Generated\IMisArticleCategoryService.generated.cs
+..\Generated\IMisArticleService.generated.cs
 ..\Generated\ISysLoginInfoService.generated.cs
 ..\Generated\ISysLogService.generated.cs
 ..\Generated\ISysModuleOperateService.generated.cs

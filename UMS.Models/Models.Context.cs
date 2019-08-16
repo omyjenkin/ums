@@ -15,7 +15,6 @@ namespace UMS.Models
     
     public partial class EFDbContext : DbContext
     {
-       
     
         public virtual DbSet<SysModuleOperate> SysModuleOperate { get; set; }
         public virtual DbSet<SysRight> SysRight { get; set; }
@@ -27,5 +26,8 @@ namespace UMS.Models
         public virtual DbSet<SysRole> SysRole { get; set; }
         public virtual DbSet<SysUser> SysUser { get; set; }
         public virtual DbSet<SysLog> SysLog { get; set; }
+        public virtual DbSet<MisArticle> MisArticle { get; set; }
+        public virtual DbSet<MisArticleCategory> MisArticleCategory { get; set; }
+        public virtual DbSet<B> B { get; set; }
     }
 }

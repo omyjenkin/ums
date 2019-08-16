@@ -83,12 +83,21 @@
     <Compile Include="A.cs">
       <DependentUpon>Models.tt</DependentUpon>
     </Compile>
+    <Compile Include="B.cs">
+      <DependentUpon>Models.tt</DependentUpon>
+    </Compile>
     <Compile Include="DTOs\RightDTO.cs" />
     <Compile Include="DTOs\RightModuleDTO.cs" />
     <Compile Include="DTOs\RoleDTO.cs" />
     <Compile Include="DTOs\UserDTO.cs" />
     <Compile Include="EFDbContext.cs" />
     <Compile Include="EntityBase.cs" />
+    <Compile Include="MisArticle.cs">
+      <DependentUpon>Models.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MisArticleCategory.cs">
+      <DependentUpon>Models.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -146,6 +155,7 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Models.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <None Include="GetSummary.ttinclude" />
     <None Include="Models.edmx.diagram">
       <DependentUpon>Models.edmx</DependentUpon>
     </None>

@@ -21,86 +21,86 @@ namespace UMS.Models
     public partial class SysModule:EntityBase
     {
         /// <summary>
-        /// Id
+        /// 编码
         /// </summary>
-    	[Display(Name="Id")][Key]
+    	[Display(Name="编码")][Key]
         public string Id { get; set; }
     	   
         
         /// <summary>
-        /// Name
+        /// 名称
         /// </summary>
-    	[Display(Name="Name")]
+    	[Display(Name="名称")]
         public string Name { get; set; }
     	   
         
         /// <summary>
-        /// EnglishName
+        /// 英文名称
         /// </summary>
-    	[Display(Name="EnglishName")]
+    	[Display(Name="英文名称")]
         public string EnglishName { get; set; }
     	   
         
         /// <summary>
-        /// ParentId
+        /// 上级编码
         /// </summary>
-    	[Display(Name="ParentId")]
+    	[Display(Name="上级编码")]
         public string ParentId { get; set; }
     	   
         
         /// <summary>
-        /// Url
+        /// 路径
         /// </summary>
-    	[Display(Name="Url")]
+    	[Display(Name="路径")]
         public string Url { get; set; }
     	   
         
         /// <summary>
-        /// Iconic
+        /// 图标
         /// </summary>
-    	[Display(Name="Iconic")]
+    	[Display(Name="图标")]
         public string Iconic { get; set; }
     	   
         
         /// <summary>
-        /// Sort
+        /// 排序
         /// </summary>
-    	[Display(Name="Sort")]
+    	[Display(Name="排序")]
         public Nullable<int> Sort { get; set; }
     	   
         
         /// <summary>
-        /// Remark
+        /// 备注
         /// </summary>
-    	[Display(Name="Remark")]
+    	[Display(Name="备注")]
         public string Remark { get; set; }
     	   
         
         /// <summary>
-        /// Enable
+        /// 启用
         /// </summary>
-    	[Display(Name="Enable")]
+    	[Display(Name="启用")]
         public bool Enable { get; set; }
     	   
         
         /// <summary>
-        /// CreateUser
+        /// 创建人
         /// </summary>
-    	[Display(Name="CreateUser")]
+    	[Display(Name="创建人")]
         public string CreateUser { get; set; }
     	   
         
         /// <summary>
-        /// CreateTime
+        /// 创建时间
         /// </summary>
-    	[Display(Name="CreateTime")]
+    	[Display(Name="创建时间")]
         public Nullable<System.DateTime> CreateTime { get; set; }
     	   
         
         /// <summary>
-        /// IsLast
+        /// 
         /// </summary>
-    	[Display(Name="IsLast")]
+    	[Display(Name="")]
         public bool IsLast { get; set; }
     	   
         

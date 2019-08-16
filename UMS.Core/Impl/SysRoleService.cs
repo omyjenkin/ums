@@ -23,7 +23,7 @@ namespace UMS.Core
             {
                 foreach (var user in userList)
                 {
-                    UserName += "[" + user.UserName + "] ";
+                    UserName += "[" + user.Id + "] ";
                 }
             }
             return UserName;

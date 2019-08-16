@@ -21,23 +21,23 @@ namespace UMS.Models
     public partial class SysUserRole:EntityBase
     {
         /// <summary>
-        /// Id
+        /// 
         /// </summary>
-    	[Display(Name="Id")][Key]
+    	[Display(Name="")][Key]
         public System.Guid Id { get; set; }
     	   
         
         /// <summary>
-        /// SysUserId
+        /// 
         /// </summary>
-    	[Display(Name="SysUserId")]
+    	[Display(Name="")]
         public string SysUserId { get; set; }
     	   
         
         /// <summary>
-        /// SysRoleId
+        /// 
         /// </summary>
-    	[Display(Name="SysRoleId")]
+    	[Display(Name="")]
         public string SysRoleId { get; set; }
     	   
         

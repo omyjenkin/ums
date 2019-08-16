@@ -21,65 +21,65 @@ namespace UMS.Models
     public partial class SysLoginInfo:EntityBase
     {
         /// <summary>
-        /// Id
+        /// 
         /// </summary>
-    	[Display(Name="Id")][Key]
+    	[Display(Name="")][Key]
         public int Id { get; set; }
     	   
         
         /// <summary>
-        /// CreateTime
+        /// 
         /// </summary>
-    	[Display(Name="CreateTime")]
+    	[Display(Name="")]
         public System.DateTime CreateTime { get; set; }
     	   
         
         /// <summary>
-        /// LoginToken
+        /// 
         /// </summary>
-    	[Display(Name="LoginToken")]
+    	[Display(Name="")]
         public System.Guid LoginToken { get; set; }
     	   
         
         /// <summary>
-        /// LastAccessTime
+        /// 
         /// </summary>
-    	[Display(Name="LastAccessTime")]
+    	[Display(Name="")]
         public System.DateTime LastAccessTime { get; set; }
     	   
         
         /// <summary>
-        /// SysUserId
+        /// 
         /// </summary>
-    	[Display(Name="SysUserId")]
+    	[Display(Name="")]
         public string SysUserId { get; set; }
     	   
         
         /// <summary>
-        /// LoginName
+        /// 
         /// </summary>
-    	[Display(Name="LoginName")]
+    	[Display(Name="")]
         public string LoginName { get; set; }
     	   
         
         /// <summary>
-        /// BusinessPermissionString
+        /// 
         /// </summary>
-    	[Display(Name="BusinessPermissionString")]
+    	[Display(Name="")]
         public string BusinessPermissionString { get; set; }
     	   
         
         /// <summary>
-        /// ClientIP
+        /// 
         /// </summary>
-    	[Display(Name="ClientIP")]
+    	[Display(Name="")]
         public string ClientIP { get; set; }
     	   
         
         /// <summary>
-        /// EnumLoginAccountType
+        /// 
         /// </summary>
-    	[Display(Name="EnumLoginAccountType")]
+    	[Display(Name="")]
         public int EnumLoginAccountType { get; set; }
     	   
         

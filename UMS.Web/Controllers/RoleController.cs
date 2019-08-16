@@ -62,18 +62,18 @@ namespace UMS.Web.Controllers
                 if (RoleService.Insert(model) > 0)
                 {
                     //LogHandler.WriteServiceLog(GetUserId(), "Id" + model.Id + ",Name" + model.Name, "成功", "创建", "SysRole");
-                    return Json(new OperationResult(OperationResultType.Success));
+                    return Success(Suggestion.InsertSucceed);
                 }
                 else
                 {
                     //string ErrorCol = errors.Error;
                     //LogHandler.WriteServiceLog(GetUserId(), "Id" + model.Id + ",Name" + model.Name + "," + ErrorCol, "失败", "创建", "SysRole");
-                    return Json(new OperationResult(OperationResultType.Error, "插入失败"));
+                    return Error(Suggestion.InsertFail);
                 }
             }
             else
             {
-                return Json(new OperationResult(OperationResultType.Error, "插入失败"));
+                return Error(Suggestion.InsertFail);
             }
         }
         #endregion
@@ -97,18 +97,18 @@ namespace UMS.Web.Controllers
                 if (RoleService.Update(model) > 0)
                 {
                     //LogHandler.WriteServiceLog(GetUserId(), "Id" + model.Id + ",Name" + model.Name, "成功", "修改", "系统菜单");
-                    return Json(new OperationResult(OperationResultType.Success, "修改成功！"));
+                    return Success(Suggestion.UpdateSucceed);
                 }
                 else
                 {
                     //string ErrorCol = errors.Error;
                     //LogHandler.WriteServiceLog(GetUserId(), "Id" + model.Id + ",Name" + model.Name + "," + ErrorCol, "失败", "修改", "系统菜单");
-                    return Json(new OperationResult(OperationResultType.Error, "修改成功！"));
+                    return Error(Suggestion.UpdateFail);
                 }
             }
             else
             {
-                return Json(new OperationResult(OperationResultType.Error, "修改成功！"));
+                return Error(Suggestion.UpdateFail);
             }
         }
         #endregion
@@ -155,11 +155,11 @@ namespace UMS.Web.Controllers
 
             if (RoleService.UpdateSysRoleSysUser(roleId, arr))
             {
-                return Json(new OperationResult(OperationResultType.Success, Suggestion.SetSucceed), JsonRequestBehavior.AllowGet);
+                return Success(Suggestion.SetSucceed);
             }
             else
             {
-                return Json(new OperationResult(OperationResultType.Error, Suggestion.SetFail), JsonRequestBehavior.AllowGet);
+                return Error(Suggestion.SetFail);
             }
              
         }

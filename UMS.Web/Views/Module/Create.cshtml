@@ -10,34 +10,7 @@
     }
 }
 
-<script type="text/javascript">
-    $(function () {
-        $("#btnSave").click(function () {
-            if ($("form").valid()) {
-                $.ajax({
-                    url: "/Module/Create",
-                type: "Post",
-                data: $("form").serialize(),
-                dataType: "json",
-                success: function (data) {
-                    if (data.ResultType == 0) {
-                        window.parent.frameReturnByMes(data.Message);
-                        window.parent.frameReturnByReload(true);
-                        window.parent.frameReturnByClose()
-                    }
-                    else {
-                        window.parent.frameReturnByMes(data.Message);
-                    }
-                }
-            });
-        }
-        return false;
-    });
-    $("#btnReturn").click(function () {
-        window.parent.frameReturnByClose();
-    });
-});
-</script>
+
 
 <div style="height:100%;width:100%;">
 
@@ -138,3 +111,33 @@
         </table>
     }
 </div>
+
+
+<script type="text/javascript">
+    $(function () {
+        $("#btnSave").click(function () {
+            if ($("form").valid()) {
+                $.ajax({
+                    url: "/Module/Create",
+                type: "Post",
+                data: $("form").serialize(),
+                dataType: "json",
+                success: function (data) {
+                    if (data.ResultType == 0) {
+                        window.parent.frameReturnByMes(data.Message);
+                        window.parent.frameReturnTreeGridByReload(true);
+                        window.parent.frameReturnByClose()
+                    }
+                    else {
+                        window.parent.frameReturnByMes(data.Message);
+                    }
+                }
+            });
+        }
+        return false;
+    });
+    $("#btnReturn").click(function () {
+        window.parent.frameReturnByClose();
+    });
+});
+</script>

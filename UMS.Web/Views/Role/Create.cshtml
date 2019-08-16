@@ -10,31 +10,7 @@
     }
 }
 
-<script type="text/javascript">
-    $(function () {
-        $("#btnSave").click(function () {
-            $.ajax({
-                url: "/Role/Create",
-                type: "Post",
-                data: $("#CreateForm").serialize(),
-                dataType: "json",
-                success: function (data) {
-                    if (data.ResultType == 0) {
-                        window.parent.frameReturnByMes(data.Message);
-                        window.parent.frameReturnByReload(true);
-                        window.parent.frameReturnByClose()
-                    }
-                    else {
-                        window.parent.frameReturnByMes(data.Message);
-                    }
-                }
-            });
-        });
-        $("#btnReturn").click(function () {
-            window.parent.frameReturnByClose();
-        });
-    });
-</script>
+ 
 
 <div style="height:100%;width:100%;">
     <div class="dialog-toolbar mvctoolbar">
@@ -67,3 +43,30 @@
 
     }
 </div>
+
+<script type="text/javascript">
+    $(function () {
+        $("#btnSave").click(function () {
+            if (!$("form").valid()) return;
+            $.ajax({
+                url: "/Role/Create",
+                type: "Post",
+                data: $("#CreateForm").serialize(),
+                dataType: "json",
+                success: function (data) {
+                    if (data.ResultType == 0) {
+                        window.parent.frameReturnByMes(data.Message); console.log('reload ..')
+                        window.parent.frameReturnByReload(true); console.log('close ..')
+                        window.parent.frameReturnByClose(); console.log('done')
+                    }
+                    else {
+                        window.parent.frameReturnByMes(data.Message);
+                    }
+                }
+            });
+        });
+        $("#btnReturn").click(function () {
+            window.parent.frameReturnByClose();
+        });
+    });
+</script>

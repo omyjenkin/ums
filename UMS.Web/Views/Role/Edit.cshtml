@@ -13,7 +13,7 @@
 <script type="text/javascript">
     $(function () {
         $("#btnSave").click(function() {
-            console.log('abc');
+            if (!$("form").valid()) return;
                 $.ajax({
                     url: "/Role/Edit",
                     type: "Post",

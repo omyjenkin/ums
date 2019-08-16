@@ -21,37 +21,37 @@ namespace UMS.Models
     public partial class SysRole:EntityBase
     {
         /// <summary>
-        /// Id
+        /// 编号
         /// </summary>
-    	[Display(Name="Id")][Key]
+    	[Display(Name="编号")][Key]
         public string Id { get; set; }
     	   
         
         /// <summary>
-        /// Name
+        /// 名称
         /// </summary>
-    	[Display(Name="Name")]
+    	[Display(Name="名称")]
         public string Name { get; set; }
     	   
         
         /// <summary>
-        /// Description
+        /// 描述
         /// </summary>
-    	[Display(Name="Description")]
+    	[Display(Name="描述")]
         public string Description { get; set; }
     	   
         
         /// <summary>
-        /// CreateTime
+        /// 创建时间
         /// </summary>
-    	[Display(Name="CreateTime")]
+    	[Display(Name="创建时间")]
         public System.DateTime CreateTime { get; set; }
     	   
         
         /// <summary>
-        /// CreateUser
+        /// 创建人
         /// </summary>
-    	[Display(Name="CreateUser")]
+    	[Display(Name="创建人")]
         public string CreateUser { get; set; }
     	   
         

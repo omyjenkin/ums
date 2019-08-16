@@ -11,15 +11,13 @@ namespace UMS.Web
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
                         "~/Scripts/jquery-{version}.js"));
 
-            //bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
-            //            "~/Scripts/jquery.validate*"));
-
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
-                        "~/Scripts/jquery.validate.unobtrusive.min.js").Include(
-                "~/Scripts/jquery.unobtrusive-ajax.js"));
-
+                        "~/Scripts/jquery.validate*").Include(
+                "~/Scripts/jquery.unobtrusive-ajax.js").Include(
+                "~/Scripts/additional-validate.js"));
+            
             bundles.Add(new ScriptBundle("~/bundles/common").Include(
-                        "~/Scripts/common.js"));
+                        "~/Content/js/Common.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/home").Include(
                        "~/Scripts/home.js"));
@@ -42,6 +40,7 @@ namespace UMS.Web
 
             bundles.Add(new StyleBundle("~/Content/css").Include("~/Content/site.css"));
 
+            //BundleTable.EnableOptimizations = false;
         }
     }
 }

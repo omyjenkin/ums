@@ -51,7 +51,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Generated\IARepository.generated.cs" />
+    <Compile Include="Generated\IMisArticleCategoryRepository.generated.cs" />
+    <Compile Include="Generated\IMisArticleRepository.generated.cs" />
     <Compile Include="Generated\Impl\ARepository.generated.cs" />
+    <Compile Include="Generated\Impl\MisArticleCategoryRepository.generated.cs" />
+    <Compile Include="Generated\Impl\MisArticleRepository.generated.cs" />
     <Compile Include="Generated\Impl\SysLoginInfoRepository.generated.cs" />
     <Compile Include="Generated\Impl\SysLogRepository.generated.cs" />
     <Compile Include="Generated\Impl\SysModuleOperateRepository.generated.cs" />
@@ -98,6 +102,8 @@
       <LastGenOutput>IDALScript.cs</LastGenOutput>
       <LastOutputs>
 ..\Generated\IARepository.generated.cs
+..\Generated\IMisArticleCategoryRepository.generated.cs
+..\Generated\IMisArticleRepository.generated.cs
 ..\Generated\ISysLoginInfoRepository.generated.cs
 ..\Generated\ISysLogRepository.generated.cs
 ..\Generated\ISysModuleOperateRepository.generated.cs
@@ -115,6 +121,8 @@
       <LastGenOutput>DALScript.cs</LastGenOutput>
       <LastOutputs>
 ..\Generated\Impl\ARepository.generated.cs
+..\Generated\Impl\MisArticleCategoryRepository.generated.cs
+..\Generated\Impl\MisArticleRepository.generated.cs
 ..\Generated\Impl\SysLoginInfoRepository.generated.cs
 ..\Generated\Impl\SysLogRepository.generated.cs
 ..\Generated\Impl\SysModuleOperateRepository.generated.cs

@@ -59,7 +59,7 @@ namespace UMS.Web.Controllers
 
                 if (UserService.Insert(model) > 0)
                 {
-                    return Success();
+                    return Success(Suggestion.InsertSucceed);
                 }
                 else
                 {

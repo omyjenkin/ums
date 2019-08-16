@@ -339,6 +339,8 @@ setValidationValues(options, "regex", options.params.regex);
 }
 });
 $(function () {
-$jQval.unobtrusive.parse(document);
+    $jQval.unobtrusive.parse(document);
+
+   
 });
 }(jQuery));
